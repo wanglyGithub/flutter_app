@@ -1,38 +1,38 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/constant/app_theme.dart';
+import 'package:flutter_app/constant/cache_key.dart';
 
-class _MainPage extends StatelessWidget{
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
-  Widget build(BuildContext context) {
-    throw UnimplementedError();
+  State<StatefulWidget> createState() {
+    return _HomePageState();
   }
-
 }
 
+class _HomePageState extends State<HomePage> {
 
-List<BottomNavigationBarItem> bottomItemList = const [
-  BottomNavigationBarItem(
-    icon: Icon(
-      Icons.home,
-    ),
-    title: Text("首页"),
-  ),
-  BottomNavigationBarItem(
-    icon: Icon(
-      Icons.business,
-    ),
-    title: Text("商店"),
-  ),
-  BottomNavigationBarItem(
-    icon: Icon(
-      Icons.message,
-    ),
-    title: Text("消息"),
-  ),
-  BottomNavigationBarItem(
-    icon: Icon(
-      Icons.person,
-    ),
-    title: Text("个人中心"),
-  )
-];
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("开源中国"),
+        titleTextStyle: const TextStyle(fontSize: 16),
+      ),
+      body: Container(),
+      bottomNavigationBar: BottomNavigationBar(
+        items: CacheKey.navigationBars,
+        type: BottomNavigationBarType.fixed,
+        selectedFontSize: AppFonts.fontSize,
+        unselectedFontSize: AppFonts.fontSize,
+      ),
+    );
+  }
+}
