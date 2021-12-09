@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'dart:ui' as ui;
 
 class ScreenUtils {
-  late MediaQueryData _mediaQueryData;
+  MediaQueryData? _mediaQueryData;
 
   double _screenWidth = 0.0;
   double _screenHeight = 0.0;
@@ -33,7 +33,7 @@ class ScreenUtils {
   double get screenHeight => _screenHeight;
 
   /// media Query Data
-  MediaQueryData get mediaQueryData => _mediaQueryData;
+  MediaQueryData? get mediaQueryData => _mediaQueryData;
 
   /// screen width
   /// 当前屏幕 宽
