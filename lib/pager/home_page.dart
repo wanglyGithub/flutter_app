@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/constant/app_theme.dart';
 import 'package:flutter_app/constant/cache_key.dart';
+import 'package:flutter_app/pager/tab_image_feed.dart';
+import 'package:flutter_app/pager/tab_myself_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -36,9 +38,9 @@ class _HomePageState extends State<HomePage> {
       body: PageView(
         children: [
           Container(color: Colors.grey.shade200),
-          Container(color: Colors.redAccent),
+          Container(color: Colors.grey.shade50,child: const TabImageFeed()),
           Container(color: Colors.blueAccent),
-          Container(color: Colors.teal),
+          Container(color: Colors.grey.shade300 ),
         ],
         controller: pageController,
         physics: const BouncingScrollPhysics(),
