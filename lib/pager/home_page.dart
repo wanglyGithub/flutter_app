@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
           Container(color: Colors.grey.shade200),
           Container(color: Colors.grey.shade50,child: const TabImageFeed()),
           Container(color: Colors.blueAccent),
-          Container(color: Colors.grey.shade300,
+          Container(color: Colors.grey.shade200,
             padding: const EdgeInsets.all(15),
             child: const TabMySelfPage(),),
         ],
