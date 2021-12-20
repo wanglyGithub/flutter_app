@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_app/bean/store_data.dart';
 
 class MockData{
@@ -21,6 +22,21 @@ class MockData{
 
 
   ];
+
+
+     static List<StoreBean> settingList = [
+
+          StoreBean("用户反馈","",icon: Icons.feedback_outlined),
+          StoreBean("钱包", "",icon: Icons.wallet_giftcard_rounded),
+          StoreBean("评论", "",icon: Icons.comment_sharp),
+          StoreBean("点赞", "",icon: Icons.unarchive),
+          StoreBean("关注", "",icon: Icons.filter_center_focus),
+          StoreBean("夜间模式", "",icon: Icons.wb_sunny_outlined),
+          StoreBean("默认", "",icon: Icons.done_outline),
+          StoreBean("隐私设置", "",icon: Icons.privacy_tip),
+          StoreBean("广告推广", "",icon: Icons.add_a_photo_sharp),
+
+     ];
 
 
 }
