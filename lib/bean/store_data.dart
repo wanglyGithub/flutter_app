@@ -1,6 +1,11 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
 class StoreBean {
   String? image = "";
   String? label = "";
 
-  StoreBean(this.label,this.image);
+  IconData? icon;
+
+  StoreBean(this.label,this.image,{this.icon});
 }
