@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_app/constant/mock_data.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class TabMySelfPage extends StatefulWidget {
   const TabMySelfPage({Key? key}) : super(key: key);
@@ -205,21 +206,26 @@ class TopBarWidgetState extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.min,
-                  children: const [
-                    Text("更多服务"),
-                    Spacer(),
-                    Text(
-                      "全部",
-                    ),
-                    Icon(
-                      Icons.keyboard_arrow_right_sharp,
-                      size: 14,
-                    )
-                  ],
+                InkWell(
+                  onTap: () {
+                    Fluttertoast.showToast(msg :"点击全部");
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: const [
+                      Text("更多服务"),
+                      Spacer(),
+                      Text(
+                        "全部",
+                      ),
+                      Icon(
+                        Icons.keyboard_arrow_right_sharp,
+                        size: 14,
+                      )
+                    ],
+                  ),
                 ),
                 const SizedBox(
                   height: 15,
@@ -242,10 +248,9 @@ class MoreServiceWidget extends StatelessWidget {
     return GridView.builder(
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 4,
-        crossAxisSpacing: 20.0, //左右距离
-        mainAxisSpacing: 20.0
-      ),
+          crossAxisCount: 4,
+          crossAxisSpacing: 20.0, //左右距离
+          mainAxisSpacing: 20.0),
       itemBuilder: _getItem,
       itemCount: MockData.settingList.length,
       shrinkWrap: true,
@@ -253,15 +258,20 @@ class MoreServiceWidget extends StatelessWidget {
   }
 
   Widget _getItem(context, index) {
-    return Column(
-      children: [
-        Icon(MockData.settingList[index].icon),
-        const SizedBox(height: 5),
-        Text(
-          MockData.settingList[index].label ?? "",
-          style: const TextStyle(fontSize: 13),
-        )
-      ],
-    );
+    return InkWell(
+        onTap: () {
+          Fluttertoast.showToast(
+              msg: "msg ${MockData.settingList[index].label}");
+        },
+        child: Column(
+          children: [
+            Icon(MockData.settingList[index].icon),
+            const SizedBox(height: 5),
+            Text(
+              MockData.settingList[index].label ?? "",
+              style: const TextStyle(fontSize: 13),
+            )
+          ],
+        ));
   }
 }
