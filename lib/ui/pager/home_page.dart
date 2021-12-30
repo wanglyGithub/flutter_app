@@ -2,8 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/constant/app_theme.dart';
 import 'package:flutter_app/constant/cache_key.dart';
-import 'package:flutter_app/pager/tab_image_feed.dart';
-import 'package:flutter_app/pager/tab_myself_page.dart';
+import 'package:flutter_app/ui/pager/tab_home_page.dart';
+import 'package:flutter_app/ui/pager/tab_image_feed.dart';
+import 'package:flutter_app/ui/pager/tab_myself_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -32,12 +33,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("开源中国"),
+        title: const Text("flutterApp"),
         titleTextStyle: const TextStyle(fontSize: 16),
       ),
       body: PageView(
         children: [
-          Container(color: Colors.grey.shade200),
+          const TabHomePage(),
           Container(color: Colors.grey.shade50,child: const TabImageFeed()),
           Container(color: Colors.blueAccent),
           Container(color: Colors.grey.shade200,
